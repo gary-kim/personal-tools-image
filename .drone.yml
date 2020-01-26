@@ -1,0 +1,19 @@
+kind: pipeline
+type: docker
+name: deploy
+
+steps:
+  - name: deploy-container
+    image: plugins/docker
+    settings:
+      username: garykim
+      password:
+        from_secret: docker_password
+      repo: garykim/personal-fdroid-repoworker
+    when:
+      branch:
+        - master
+      event:
+        - push
+      repo:
+        - gary-kim/personal-fdroid-repoworker
