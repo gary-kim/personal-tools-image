@@ -9,11 +9,12 @@ steps:
       username: garykim
       password:
         from_secret: docker_password
-      repo: garykim/personal-fdroid-repoworker
-    when:
-      branch:
-        - master
-      event:
-        - push
-      repo:
-        - gary-kim/personal-fdroid-repoworker
+      repo: garykim/personal-tools-image
+
+when:
+  branch:
+    - master
+  event:
+    - push
+  repo:
+    - gary-kim/personal-tools-image
