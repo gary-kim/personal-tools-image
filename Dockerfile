@@ -1,6 +1,6 @@
 FROM fedora:39
 
-ARG KRANKERL_VERSION=v0.13.3
+ARG KRANKERL_VERSION=v0.14.0
 
 LABEL maintainer="Gary Kim <gary@garykim.dev>"
 RUN dnf install -y jq findutils rdfind hub rustc cargo openssl-devel make nodejs npm git patch gcc g++ python3-distutils-extra python3-setuptools && dnf clean all && npm i -g yarn
