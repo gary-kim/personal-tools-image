@@ -4,7 +4,7 @@ name: deploy
 
 steps:
   - name: deploy-container
-    image: plugins/docker
+    image: garykim/drone-docker
     settings:
       username: garykim
       password:
