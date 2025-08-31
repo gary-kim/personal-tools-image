@@ -3,6 +3,16 @@ type: docker
 name: deploy
 
 steps:
+  - name: test-container
+    image: plugins/docker
+    settings:
+      repo: garykim/personal-tools-image
+      dry_run: true
+    when:
+      event:
+        exclude:
+          - push
+
   - name: deploy-container
     image: plugins/docker
     settings:
@@ -10,11 +20,10 @@ steps:
       password:
         from_secret: docker_password
       repo: garykim/personal-tools-image
-
-when:
-  branch:
-    - master
-  event:
-    - push
-  repo:
-    - gary-kim/personal-tools-image
+    when:
+      branch:
+        - master
+      event:
+        - push
+      repo:
+        - gary-kim/personal-tools-image
