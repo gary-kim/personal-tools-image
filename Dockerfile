@@ -1,9 +1,9 @@
-FROM fedora:42
+FROM fedora:43
 
 ARG KRANKERL_VERSION=v0.14.0
 
 LABEL maintainer="Gary Kim <gary@garykim.dev>"
-RUN dnf install -y jq findutils rdfind hub rustc cargo openssl-devel make nodejs npm git patch gcc g++ python3-distutils-extra python3-setuptools composer && dnf clean all && npm i -g yarn
+RUN dnf install -y jq rdfind gh rustc cargo openssl-devel make nodejs npm pnpm git patch gcc g++ python3-distutils-extra python3-setuptools composer && dnf clean all && npm i -g yarn
 ENV NODE_OPTIONS=--openssl-legacy-provider
 
 # Install Krankerl
