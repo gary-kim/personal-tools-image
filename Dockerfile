@@ -1,4 +1,4 @@
-FROM fedora:44
+FROM fedora:45
 
 ARG KRANKERL_VERSION=v0.14.0
 
