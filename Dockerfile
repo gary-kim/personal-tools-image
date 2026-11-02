@@ -1,4 +1,4 @@
-FROM fedora:43
+FROM fedora:44
 
 ARG KRANKERL_VERSION=v0.14.0
 
@@ -8,4 +8,3 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 
 # Install Krankerl
 RUN curl --output /usr/bin/krankerl -L https://github.com/ChristophWurst/krankerl/releases/download/$KRANKERL_VERSION/krankerl && chmod +x /usr/bin/krankerl
-
